@@ -3,11 +3,11 @@ import { Workout } from '../workout';
 import { WORKOUTS } from '../mock-workouts';
 
 @Component({
-  selector: 'app-workout',
-  templateUrl: './workout.component.html',
-  styleUrls: ['./workout.component.css']
+  selector: 'app-workouts',
+  templateUrl: './workouts.component.html',
+  styleUrls: ['./workouts.component.css']
 })
-export class WorkoutComponent implements OnInit {
+export class WorkoutsComponent implements OnInit {
   workouts:Workout[] = WORKOUTS;
 
   selectedWorkout: Workout;
@@ -19,5 +19,4 @@ export class WorkoutComponent implements OnInit {
   constructor() { }
 
   ngOnInit() { }
-
 }

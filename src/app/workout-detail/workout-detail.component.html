@@ -1,0 +1,11 @@
+<div *ngIf="workout">
+
+  <h2>{{ workout.type | uppercase }} Details</h2>
+  <div><span>id: </span>{{workout.id}}</div>
+  <div>
+    <label>text:
+      <input [(ngModel)]="workout.text" placeholder="text"/>
+    </label>
+  </div>
+
+</div>
