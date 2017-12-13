@@ -2,17 +2,9 @@
 <div style="text-align:center">
   <h1>{{ title }}</h1>
 </div>
-<h2>Steps to victory:</h2>
-<ul>
-  <li>
-    <h2>make a nice frontend</h2>
-  </li>
-  <li>
-    <h2>grow larger user base</h2>
-  </li>
-  <li>
-    <h2>scale webapp</h2>
-  </li>
-</ul>
-<app-workouts></app-workouts>
+<nav>
+  <a routerLink="/workouts">Workouts</a>
+  <a routerLink="/dashboard">Dashboard</a>
+</nav>
+<router-outlet></router-outlet>
 <app-messages></app-messages>

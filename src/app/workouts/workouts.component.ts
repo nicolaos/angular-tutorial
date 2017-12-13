@@ -10,18 +10,12 @@ import { WorkoutService } from '../workout.service';
 export class WorkoutsComponent implements OnInit {
   workouts: Workout[];
 
-  selectedWorkout: Workout;
-
-  onSelect(workout: Workout): void {
-    this.selectedWorkout = workout;
-  }
+  constructor(private workoutService: WorkoutService) { }
 
   getWorkouts(): void {
     this.workoutService.getWorkouts()   //returns Observable<Workout[]>
       .subscribe(workouts => this.workouts = workouts);
   }
-
-  constructor(private workoutService: WorkoutService) { }
 
   ngOnInit() {
     this.getWorkouts();

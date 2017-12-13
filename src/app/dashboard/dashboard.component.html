@@ -1,0 +1,8 @@
+<h3>Top workouts</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let workout of workouts" class="col-1-4" routerLink="/detail/{{workout.id}}">
+    <div class="module workout">
+      <h4>{{workout.day}}</h4>
+    </div>
+  </a>
+</div>

@@ -16,6 +16,11 @@ export class WorkoutService {
     return of(WORKOUTS);
   }
 
+  getWorkout(id: number): Observable<Workout> {
+    this.messageService.add(`WorkoutService: caricato allenamento id=${id}`);
+    return of(WORKOUTS.find(workout => workout.id === id));
+  }
+
   constructor(private messageService: MessageService) { }
 
 }
