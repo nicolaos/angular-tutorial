@@ -1,8 +1,20 @@
 <h2>Allenamenti:</h2>
+
+<div>
+  <label>Workout type:
+    <input #workoutType />
+  </label>
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button (click)="add(workoutType.value); workoutType.value=''">
+    add
+  </button>
+</div>
+
 <ul class="workouts">
   <li *ngFor="let workout of workouts">
     <a routerLink="/detail/{{workout.id}}">
       <span class="badge">{{workout.id}}</span> {{workout.type}}
     </a>
+    <button class="delete" title="delete workout" (click)="delete(workout)">x</button>
   </li>
 </ul>

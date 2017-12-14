@@ -20,4 +20,18 @@ export class WorkoutsComponent implements OnInit {
   ngOnInit() {
     this.getWorkouts();
   }
+
+  add(type: string): void {
+    type = type.trim();
+    if (!type) { return; }
+    this.workoutService.addWorkout({type} as Workout)
+      .subscribe(workout => {
+        this.workouts.push(workout);
+      });
+  }
+
+  delete(workout: Workout): void {
+    this.workouts = this.workouts.filter(h => h !== workout);
+    this.workoutService.deleteWorkout(workout).subscribe();
+  }
 }
